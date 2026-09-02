@@ -32,7 +32,7 @@ type BackupEngineInfo struct {
 	c *C.rocksdb_backup_engine_info_t
 }
 
-// GetCount gets the number backsup available.
+// GetCount gets the number of backups available.
 func (b *BackupEngineInfo) GetCount() int {
 	return int(C.rocksdb_backup_engine_info_count(b.c))
 }
@@ -48,7 +48,7 @@ func (b *BackupEngineInfo) GetBackupID(index int) int64 {
 	return int64(C.rocksdb_backup_engine_info_backup_id(b.c, C.int(index)))
 }
 
-// GetSize get the size of the backup in bytes.
+// GetSize gets the size of the backup in bytes.
 func (b *BackupEngineInfo) GetSize(index int) int64 {
 	return int64(C.rocksdb_backup_engine_info_size(b.c, C.int(index)))
 }
@@ -230,7 +230,7 @@ func (b *BackupEngine) VerifyBackup(index uint32) error{
 	return nil
 }
 
-// Close close the backup engine and cleans up state
+// Close closes the backup engine and cleans up state
 // The backups already taken remain on storage.
 func (b *BackupEngine) Close() {
 	C.rocksdb_backup_engine_close(b.c)

@@ -47,7 +47,7 @@ const (
 	// because all members of a cluster have roughly equivalent write traffic; as
 	// a result, secondaries will service reads at roughly the same rate as the
 	// primary. In addition, although replication is synchronous, there is some amount
-	// of dely between event replication to secondaries and change application
+	// of delay between event replication to secondaries and change application
 	// to the corresponding balloon. Reading from a secondary can return stale data.
 	SecondaryPreferred
 
@@ -78,7 +78,7 @@ const (
 	// DefaultHealthCheckEnabled specifies if healthchecks are enabled by default.
 	DefaultHealthCheckEnabled = true
 
-	// DefaultHealthCheckTimeout specifies the time the healtch checker waits for
+	// DefaultHealthCheckTimeout specifies the time the health checker waits for
 	// a response from QED.
 	DefaultHealthCheckTimeout = 2 * time.Second
 
@@ -128,8 +128,8 @@ type Config struct {
 	// topology when requests fail.
 	EnableTopologyDiscovery bool `desc:"Enables the process of discovering the cluster topology when requests fail"`
 
-	// EnableHealthChecks enables helthchecks of all endpoints in the current cluster topology.
-	EnableHealthChecks bool `desc:"Enables helthchecks of all endpoints in the current cluster topology"`
+	// EnableHealthChecks enables healthchecks of all endpoints in the current cluster topology.
+	EnableHealthChecks bool `desc:"Enables healthchecks of all endpoints in the current cluster topology"`
 
 	// HealthCheckTimeout is the time the healthcheck waits for a response
 	// from a QED server.

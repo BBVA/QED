@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-// Package hashing implements different hashers and their funcionality.
+// Package hashing implements different hashers and their functionality.
 package hashing
 
 import (

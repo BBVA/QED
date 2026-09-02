@@ -16,7 +16,7 @@ const (
 	NotSet Level = iota
 
 	// Off is intended to avoid tracing any action.
-	// This is the hightest possible rank.
+	// This is the highest possible rank.
 	Off
 
 	// Fatal designates very severe errors that lead
@@ -25,7 +25,7 @@ const (
 	Fatal
 
 	// Error designates rare error events that might still allow
-	// the application to continue running (e.g. losts of contact
+	// the application to continue running (e.g. loss of contact
 	// with peers...).
 	Error
 
@@ -33,7 +33,7 @@ const (
 	// errors, unknown message types...).
 	Warn
 
-	// Info designates informational messages that hightlight the
+	// Info designates informational messages that highlight the
 	// main progress of the application at coarse-grained level.
 	// It should be used to document main state changes in the application
 	// (e.g. bootstrap, shutdown, main cluster operations...).
@@ -43,7 +43,7 @@ const (
 	// useful to debug the application. Don't use it in production.
 	Debug
 
-	// Trace designates a even finer-grained informational events
+	// Trace designates even finer-grained informational events
 	// than Debug level. Don't use it in production.
 	Trace
 )
@@ -166,7 +166,7 @@ type LoggerOptions struct {
 	Name string
 
 	// Level is the threshold for the logger. Any log trace less
-	// sever is supressed.
+	// severe is suppressed.
 	Level Level
 
 	// Output is the writer implementation where to write logs to.
@@ -194,7 +194,7 @@ type StdLoggerOptions struct {
 	// ForceLevel is used to force all output from the standard logger to be at
 	// the specified level. Similar to InferLevels, this will strip any level
 	// prefix contained in the logged string before applying the forced level.
-	// If set, this override InferLevels.
+	// If set, this overrides InferLevels.
 	ForceLevel Level
 }
 
