@@ -160,7 +160,7 @@ func (c *BatchCache) seek(key []byte) uint64 {
 	// In order to calculate the exact offset where the desired
 	// key is stored into, we can combine the previously calculated
 	// offsets by depth and the index that locates every batch at its depth.
-	// This comes from the intuituion that, at every depth of the tree,
+	// This comes from the intuition that, at every depth of the tree,
 	// the n (when n = depth) most significant bit of the key corresponds
 	// with the ordered index of all nodes at such depth.
 	//
@@ -175,19 +175,19 @@ func (c *BatchCache) seek(key []byte) uint64 {
 	//             +------------+-------------+
 	//             |                          |
 	//             +                          +
-	//           0000                        1000                4 -3 = 1 bit => indexes 0 and 1
+	//           0000                        1000                4 - 3 = 1 bit => indexes 0 and 1
 	//             +                          +
 	//             |                          |
 	//      +------+------+            +------+------+
 	//      |             |            |             |
 	//      +             +            +             +
-	//    0000          0100         1000          1100          4 - 2 = 2 bits => indexes 0..4
+	//    0000          0100         1000          1100          4 - 2 = 2 bits => indexes 0..3
 	//      +             +            +             +
 	//      |             |            |             |
 	//  +---+---+     +---+---+   +----+----+   +----+----
 	//  |       |     |       |   |         |   |        |
 	//  +       +     +       +   +         +   +        +
-	//0000    0010  0100    0110 1000     1010 1100    1110      4 - 1 = 3 bits => indexes 0..8
+	//0000    0010  0100    0110 1000     1010 1100    1110      4 - 1 = 3 bits => indexes 0..7
 	//
 	//
 	//                       . . . . .                           and so on...

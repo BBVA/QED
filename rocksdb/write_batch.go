@@ -37,12 +37,12 @@ type WriteBatch struct {
 	c *C.rocksdb_writebatch_t
 }
 
-// NewWriteBatch create a WriteBatch object.
+// NewWriteBatch creates a WriteBatch object.
 func NewWriteBatch() *WriteBatch {
 	return NewNativeWriteBatch(C.rocksdb_writebatch_create())
 }
 
-// NewNativeWriteBatch create a WriteBatch object.
+// NewNativeWriteBatch creates a WriteBatch object.
 func NewNativeWriteBatch(c *C.rocksdb_writebatch_t) *WriteBatch {
 	return &WriteBatch{c: c}
 }
@@ -202,7 +202,7 @@ func (e *LogDataExtractor) LogData(blob []byte) {
 	e.Blob = append(blob[:0:0], blob...)
 }
 
-// Destroy destroys de LogDataExtractor.
+// Destroy destroys the LogDataExtractor.
 func (e *LogDataExtractor) Destroy() {
 	writeBatchHandlers.Unregister(e.ID())
 	C.free(unsafe.Pointer(e.ptrId))

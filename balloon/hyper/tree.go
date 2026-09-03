@@ -14,9 +14,9 @@
    limitations under the License.
 */
 
-// Package hyper implements the history tree (a sparse merkel tree)
+// Package hyper implements the history tree (a sparse Merkle tree)
 // life cycle, its operations, as well as
-// the functionality of request and verify a membersip proof.
+// the functionality of request and verify a membership proof.
 package hyper
 
 import (
